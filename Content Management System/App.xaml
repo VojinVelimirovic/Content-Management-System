@@ -1,0 +1,12 @@
+﻿<Application
+    x:Class="Content_Management_System.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Content_Management_System"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Control">
+            <Setter Property="FontFamily" Value="Imprint MT Shadow" />
+        </Style>
+    </Application.Resources>
+</Application>
