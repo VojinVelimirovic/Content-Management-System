@@ -13,4 +13,13 @@ C:\Users\Korisnik\Desktop\Content Management System\Content Management System\ob
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.exe
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.pdb
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\App.baml
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Notification.Wpf.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\System.ValueTuple.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Notification.Wpf.pdb
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Notification.Wpf.xml
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\System.ValueTuple.xml
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.csproj.CopyComplete
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.csproj.AssemblyReference.cache

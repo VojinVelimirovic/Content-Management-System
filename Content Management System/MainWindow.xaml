@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Content_Management_System"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:notifications="clr-namespace:Notification.Wpf.Controls;assembly=Notification.Wpf"
     Title="MainWindow"
     AllowsTransparency="True"
     Background="Transparent"
@@ -12,111 +13,119 @@
     SizeToContent="WidthAndHeight"
     WindowStyle="None"
     mc:Ignorable="d">
-    <Window.Resources>
-        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-            <Setter Property="Margin" Value="10,0,0,0" />
-            <Setter Property="HorizontalAlignment" Value="Left" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="FontFamily" Value="Imprint MT Shadow" />
-            <Setter Property="FontSize" Value="20" />
-            <Setter Property="Foreground" Value="White" />
-        </Style>
-
-        <Style x:Key="TextBoxStyle" TargetType="Control">
-            <Setter Property="Width" Value="220" />
-            <Setter Property="Height" Value="40" />
-            <Setter Property="Margin" Value="0,5" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Background" Value="#FFD2B48C" />
-            <Setter Property="BorderBrush" Value="#FF574137" />
-            <Setter Property="BorderThickness" Value="3" />
-            <Setter Property="FontFamily" Value="Imprint MT Shadow" />
-            <Setter Property="FontSize" Value="20" />
-        </Style>
-        <Style BasedOn="{StaticResource TextBoxStyle}" TargetType="TextBox" />
-        <Style BasedOn="{StaticResource TextBoxStyle}" TargetType="PasswordBox" />
-
-        <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="DarkRed" />
-            <Setter Property="BorderBrush" Value="#FF574137" />
-            <Setter Property="BorderThickness" Value="3" />
-            <Setter Property="FontFamily" Value="Imprint MT Shadow" />
-            <Setter Property="FontSize" Value="16" />
-            <Setter Property="FontStyle" Value="Italic" />
-            <Setter Property="Foreground" Value="White" />
-        </Style>
-    </Window.Resources>
-    <Canvas Width="350" Height="400">
-        <Path Fill="#5e7734">
-            <Path.Data>
-                <PathGeometry>
-                    <PathGeometry.Figures>
-                        <PathFigure StartPoint="10,5">
-                            <PathFigure.Segments>
-                                <PathSegmentCollection>
-                                    <LineSegment Point="340,5" />
-                                    <LineSegment Point="340,395" />
-                                    <LineSegment Point="10,395" />
-                                    <LineSegment Point="10,5" />
-                                </PathSegmentCollection>
-                            </PathFigure.Segments>
-                        </PathFigure>
-                    </PathGeometry.Figures>
-                </PathGeometry>
-            </Path.Data>
-        </Path>
-        <Grid
-            Canvas.Left="25"
-            Canvas.Top="25"
-            Width="300"
-            Height="350">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="3*" />
-            </Grid.RowDefinitions>
-            <Image Grid.Row="0" Source="Images/CoatOfArms2.png" />
-            <TextBlock
-                Grid.Row="1"
-                Style="{StaticResource TextBlockStyle}"
-                Text="Username:" />
-            <TextBox Grid.Row="2" Style="{StaticResource TextBoxStyle}" />
-            <TextBlock
-                Grid.Row="3"
-                Style="{StaticResource TextBlockStyle}"
-                Text="Password:" />
-            <PasswordBox Grid.Row="4" Style="{StaticResource TextBoxStyle}" />
-            <Button
-                Grid.Row="5"
-                Width="220"
-                Height="40"
-                Margin="0,5"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Content="Log in"
-                Style="{StaticResource ButtonStyle}" />
-            <DockPanel Grid.Row="6" LastChildFill="False">
-                <Image
-                    Width="80"
-                    Height="85"
-                    Margin="0"
-                    DockPanel.Dock="Left"
-                    Source="Images/CoatOfArms.png" />
+    <Border BorderBrush="#333333" BorderThickness="8">
+        <Canvas Width="350" Height="400">
+            <Path>
+                <Path.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#799943" />
+                        <GradientStop Offset="0.2" Color="#5e7734" />
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigure StartPoint="0,0">
+                                <PathFigure.Segments>
+                                    <PathSegmentCollection>
+                                        <LineSegment Point="350,0" />
+                                        <LineSegment Point="350,400" />
+                                        <LineSegment Point="0,400" />
+                                        <LineSegment Point="0,0" />
+                                    </PathSegmentCollection>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <Path>
+                <Path.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0.8" Color="#00000000" />
+                        <GradientStop Offset="1" Color="#77000000" />
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigure StartPoint="0,0">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="350,0" />
+                                    <LineSegment Point="350,400" />
+                                    <LineSegment Point="0,400" />
+                                    <LineSegment Point="0,0" />
+                                </PathFigure.Segments>
+                            </PathFigure>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <Grid
+                Canvas.Left="25"
+                Canvas.Top="25"
+                Width="300"
+                Height="350">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="3*" />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="Images/CoatOfArms2.png" />
+                <TextBlock
+                    Grid.Row="1"
+                    Style="{StaticResource TextBlockStyle}"
+                    Text="Username:" />
+                <TextBox
+                    Name="UsernameTextBox"
+                    Grid.Row="2"
+                    Style="{StaticResource TextBoxStyle}" />
+                <TextBlock
+                    Grid.Row="3"
+                    Style="{StaticResource TextBlockStyle}"
+                    Text="Password:" />
+                <PasswordBox
+                    Name="PasswordTextBox"
+                    Grid.Row="4"
+                    Style="{StaticResource TextBoxStyle}" />
                 <Button
-                    Name="Exit"
-                    Width="100"
-                    Height="50"
-                    Margin="10"
-                    Click="Exit_Click"
-                    Content="Exit"
-                    DockPanel.Dock="Right"
+                    Name="LogInButton"
+                    Grid.Row="5"
+                    Width="220"
+                    Height="40"
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="LogInButton_Click"
+                    Content="Log In"
                     Style="{StaticResource ButtonStyle}" />
-            </DockPanel>
-        </Grid>
-    </Canvas>
+                <DockPanel Grid.Row="6" LastChildFill="False">
+                    <Image
+                        Width="80"
+                        Height="85"
+                        Margin="0"
+                        DockPanel.Dock="Left"
+                        Source="Images/CoatOfArms.png" />
+                    <Button
+                        Name="Exit"
+                        Width="100"
+                        Height="50"
+                        Margin="10"
+                        Click="Exit_Click"
+                        Content="Exit"
+                        DockPanel.Dock="Right"
+                        Style="{StaticResource ButtonStyle}" />
+                </DockPanel>
+            </Grid>
+            <notifications:NotificationArea
+                x:Name="WindowNotificationArea"
+                Panel.ZIndex="1000"
+                MaxItems="1"
+                Position="TopLeft" />
+        </Canvas>
+    </Border>
 </Window>
