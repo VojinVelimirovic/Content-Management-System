@@ -32,11 +32,8 @@ namespace Content_Management_System
         {
             if (user.UsersRole == User.UserRole.Visitor)
             {
-                TestTextBlock.Text = "Visitor";
-            }
-            else if(user.UsersRole == User.UserRole.Admin)
-            {
-                TestTextBlock.Text = "Admin";
+                AddButton.IsEnabled = false;
+                RemoveButton.IsEnabled = false;
             }
         }
 
