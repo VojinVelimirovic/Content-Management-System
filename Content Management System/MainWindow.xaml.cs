@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Notification.Wpf;
 using Content_Management_System.Helpers;
+using Content_Management_System.Classes;
 
 namespace Content_Management_System
 {
@@ -40,20 +41,37 @@ namespace Content_Management_System
         }
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
+            HandleLogIn();
+        }
+
+        private void HandleLogIn()
+        {
             if (UsernameTextBox.Text.Equals(AdminUsername) && PasswordTextBox.Password.Equals(AdminPassword))
             {
-                userRole = UserRole.Admin;
+                User user = new User(User.UserRole.Admin, UsernameTextBox.Text, PasswordTextBox.Password);
+                TableWindow tableWindow = new TableWindow(user, this);
+                tableWindow.Show();
+                this.Hide();
+                UsernameTextBox.Text = String.Empty;
+                PasswordTextBox.Password = String.Empty;
             }
             else if (UsernameTextBox.Text.Equals(VisitorUsermane) && PasswordTextBox.Password.Equals(VisitorPassword))
             {
-                userRole = UserRole.Visitor;
+                User user = new User(User.UserRole.Visitor, UsernameTextBox.Text, PasswordTextBox.Password);
+                TableWindow tableWindow = new TableWindow(user, this);
+                tableWindow.Show();
+                this.Hide();
+                UsernameTextBox.Text = String.Empty;
+                PasswordTextBox.Password = String.Empty;
             }
             else
             {
                 MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
                 mainWindow.ShowToastNotification(new ToastNotification("Login Error", "Invalid username/password.", NotificationType.Error));
+                return;
             }
         }
+
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();

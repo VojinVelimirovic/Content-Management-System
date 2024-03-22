@@ -23,3 +23,5 @@ C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bi
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\System.ValueTuple.xml
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.csproj.CopyComplete
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.csproj.AssemblyReference.cache
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\TableWindow.g.cs
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\TableWindow.baml
