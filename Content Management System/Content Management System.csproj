@@ -73,6 +73,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Figure.cs" />
     <Compile Include="TableWindow.xaml.cs">
       <DependentUpon>TableWindow.xaml</DependentUpon>
     </Compile>
@@ -133,6 +134,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CoatOfArms2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stefan_Decanski.jpg" />
+    <Resource Include="Images\Stefan_Dragutin.jpg" />
+    <Resource Include="Images\Stefan_Dusan.jpg" />
+    <Resource Include="Images\Stefan_Milutin.jpg" />
+    <Resource Include="Images\Stefan_Nemanja.jpg" />
+    <Resource Include="Images\Stefan_Nemanjic.jpg" />
+    <Resource Include="Images\Stefan_Radoslav.jpg" />
+    <Resource Include="Images\Stefan_Uros_I.jpg" />
+    <Resource Include="Images\Stefan_Uros_V.jpg" />
+    <Resource Include="Images\Stefan_Vladislav.jpg" />
+    <Resource Include="Images\Stefan_Vladislav_II.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

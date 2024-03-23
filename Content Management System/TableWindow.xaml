@@ -87,6 +87,7 @@
                     Width="240"
                     Height="60"
                     Margin="0,30"
+                    Click="RemoveButton_Click"
                     Style="{StaticResource ButtonStyle}">
                     <StackPanel Orientation="Horizontal">
                         <fa5:SvgAwesome
@@ -120,6 +121,7 @@
                     </StackPanel>
                 </Button>
                 <DataGrid
+                    Name="FiguresDataGrid"
                     Grid.Row="1"
                     Grid.ColumnSpan="3"
                     Width="1020"
@@ -128,18 +130,116 @@
                     BorderBrush="#333333"
                     BorderThickness="2"
                     CanUserAddRows="False"
+                    CanUserReorderColumns="False"
+                    CanUserResizeColumns="False"
+                    CanUserResizeRows="False"
+                    HeadersVisibility="Column"
                     IsReadOnly="True"
+                    ItemsSource="{Binding figures}"
                     ScrollViewer.CanContentScroll="True"
                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
                     ScrollViewer.VerticalScrollBarVisibility="Auto"
                     Style="{StaticResource DataGridShadowEffectStyle}">
                     <DataGrid.Resources>
                         <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="Background" Value="#4c602a" />
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="Background" Value="Transparent" />
                             <Setter Property="Foreground" Value="White" />
-                            <Setter Property="BorderThickness" Value="0" />
+                            <Setter Property="FontFamily" Value="Imprint MT Shadow" />
+                            <Setter Property="Height" Value="30" />
+                            <Setter Property="FontSize" Value="25" />
+                        </Style>
+                        <Style TargetType="ScrollBar">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ScrollBar">
+                                        <Track IsDirectionReversed="True">
+                                            <Track.Thumb>
+                                                <Thumb
+                                                    Background="#3f4f22"
+                                                    BorderBrush="Transparent"
+                                                    BorderThickness="0" />
+                                            </Track.Thumb>
+                                        </Track>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
                         </Style>
                     </DataGrid.Resources>
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="FontFamily" Value="Imprint MT Shadow" />
+                            <Setter Property="FontSize" Value="20" />
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="Focusable" Value="False" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="*" Header="">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="2*" Header="Name">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding Name}"
+                                        TextAlignment="Center" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="2*" Header="Reign">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding ReignFormat}"
+                                        TextAlignment="Center" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="2*" Header="Image">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image
+                                        Width="90"
+                                        Height="120"
+                                        Source="{Binding Image}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="3*" Header="Description">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding Description}"
+                                        TextAlignment="Center" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="2*" Header="Date Added">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        Text="{Binding DateAdded, StringFormat={}{0:d}}"
+                                        TextAlignment="Center" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
                 </DataGrid>
             </Grid>
         </Canvas>
