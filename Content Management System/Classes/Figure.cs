@@ -24,14 +24,14 @@ namespace Content_Management_System.Classes
         private DateTime dateAdded;
         private bool isChecked;
 
-        public Figure(string name, int reignStart, int reignEnd, string image, string description, DateTime dateAdded)
+        public Figure(string name, int reignStart, int reignEnd, string image, string description)
         {
             this.Name = name;
             this.ReignStart = reignStart;
             this.ReignEnd = reignEnd;
             this.Image = image;
             this.Description = description;
-            this.DateAdded = dateAdded;
+            this.DateAdded = DateTime.Now.Date;
             this.IsChecked = false;
         }
 

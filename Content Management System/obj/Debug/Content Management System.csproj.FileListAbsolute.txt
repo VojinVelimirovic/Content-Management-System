@@ -28,4 +28,3 @@ C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bi
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\FontAwesome5.Net.dll
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\FontAwesome5.xml
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\FontAwesome5.Net.xml
-C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.csproj.AssemblyReference.cache

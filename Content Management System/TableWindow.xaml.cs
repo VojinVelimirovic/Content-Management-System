@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using Content_Management_System.Classes;
 using Figure = Content_Management_System.Classes.Figure;
 using System.Collections.ObjectModel;
+using Notification.Wpf;
+using Content_Management_System.Helpers;
 
 namespace Content_Management_System
 {
@@ -23,23 +25,25 @@ namespace Content_Management_System
     public partial class TableWindow : Window
     {
         private MainWindow mainWindow;
+        private NotificationManager notificationManager;
         public ObservableCollection<Figure> figures { get; set; }
         public TableWindow(User user, MainWindow mainWindow)
         {
             InitializeComponent();
             DataContext = this;
+            notificationManager = new NotificationManager();
             figures = new ObservableCollection<Figure>();
-            figures.Add(new Figure("Stefan Nemanja", 1168, 1196, "Images/Stefan_Nemanja.jpg", "", DateTime.Now.Date));
-            figures.Add(new Figure("Stefan Nemanjić", 1196, 1227, "Images/Stefan_Nemanjic.jpg", "", DateTime.Now.Date));
-            figures.Add(new Figure("Stefan Radoslav", 1227, 1234, "Images/Stefan_Radoslav.jpg", "", DateTime.Now.Date));
-            figures.Add(new Figure("Stefan Vladislav", 1234, 1243, "Images/Stefan_Vladislav.jpg", "", DateTime.Now.Date));
-            figures.Add(new Figure("Stefan Uroš I", 1243, 1276, "Images/Stefan_Uros_I.jpg", "", DateTime.Now.Date));
-            figures.Add(new Figure("Stefan Dragutin", 1276, 1282, "Images/Stefan_Dragutin.jpg", "", DateTime.Now.Date));
-            figures.Add(new Figure("Stefan Milutin", 1282, 1321, "Images/Stefan_Milutin.jpg", "", DateTime.Now.Date));
-            figures.Add(new Figure("Stefan Vladislav II", 1321, 1324, "Images/Stefan_Vladislav_II.jpg", "", DateTime.Now.Date));
-            figures.Add(new Figure("Stefan Uroš III", 1322, 1331, "Images/Stefan_Decanski.jpg", "", DateTime.Now.Date));
-            figures.Add(new Figure("Stefan Dušan", 1331, 1355, "Images/Stefan_Dusan.jpg", "", DateTime.Now.Date));
-            figures.Add(new Figure("Stefan Uroš V", 1355, 1371, "Images/Stefan_Uros_V.jpg", "", DateTime.Now.Date));
+            figures.Add(new Figure("Stefan Nemanja", 1168, 1196, "Images/Stefan_Nemanja.jpg", ""));
+            figures.Add(new Figure("Stefan Nemanjić", 1196, 1227, "Images/Stefan_Nemanjic.jpg", ""));
+            figures.Add(new Figure("Stefan Radoslav", 1227, 1234, "Images/Stefan_Radoslav.jpg", ""));
+            figures.Add(new Figure("Stefan Vladislav", 1234, 1243, "Images/Stefan_Vladislav.jpg", ""));
+            figures.Add(new Figure("Stefan Uroš I", 1243, 1276, "Images/Stefan_Uros_I.jpg", ""));
+            figures.Add(new Figure("Stefan Dragutin", 1276, 1282, "Images/Stefan_Dragutin.jpg", ""));
+            figures.Add(new Figure("Stefan Milutin", 1282, 1321, "Images/Stefan_Milutin.jpg", ""));
+            figures.Add(new Figure("Stefan Vladislav II", 1321, 1324, "Images/Stefan_Vladislav_II.jpg", ""));
+            figures.Add(new Figure("Stefan Uroš III", 1322, 1331, "Images/Stefan_Decanski.jpg", ""));
+            figures.Add(new Figure("Stefan Dušan", 1331, 1355, "Images/Stefan_Dusan.jpg", ""));
+            figures.Add(new Figure("Stefan Uroš V", 1355, 1371, "Images/Stefan_Uros_V.jpg", ""));
             AdjustPage(user);
             this.mainWindow = mainWindow;
         }
@@ -50,13 +54,17 @@ namespace Content_Management_System
             {
                 AddButton.IsEnabled = false;
                 RemoveButton.IsEnabled = false;
-                HideCheckboxes();
             }
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        public void ShowToastNotification(ToastNotification toastNotification)
+        {
+            notificationManager.Show(toastNotification.Title, toastNotification.Message, toastNotification.Type, "TableWindowNotificationArea");
         }
 
         private void LogOutButton_Click(object sender, RoutedEventArgs e)
@@ -67,54 +75,39 @@ namespace Content_Management_System
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = figures.Count - 1; i >= 0; i--)
+            bool anyChecked = false;
+            foreach(Figure figure in figures)
             {
-                if (figures[i].IsChecked)
+                if (figure.IsChecked)
                 {
-                    figures.RemoveAt(i);
+                    anyChecked = true;
                 }
             }
-            FiguresDataGrid.Items.Refresh();
-        }
-
-        private void HideCheckboxes()
-        {
-            foreach (var item in FiguresDataGrid.Items)
+            if (anyChecked)
             {
-                if (item is Figure figure)
+                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure you want to remove the selected item(s)?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (messageBoxResult == MessageBoxResult.Yes)
                 {
-                    var row = FiguresDataGrid.ItemContainerGenerator.ContainerFromItem(figure) as DataGridRow;
-                    if (row != null)
+                    for (int i = figures.Count - 1; i >= 0; i--)
                     {
-                        var checkBox = FindVisualChild<CheckBox>(row);
-                        if (checkBox != null)
+                        if (figures[i].IsChecked)
                         {
-                            checkBox.Visibility = Visibility.Collapsed;
+                            figures.RemoveAt(i);
                         }
                     }
-                }
-            }
-        }
-
-        private T FindVisualChild<T>(DependencyObject parent) where T : DependencyObject
-        {
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
-            {
-                DependencyObject child = VisualTreeHelper.GetChild(parent, i);
-                if (child != null && child is T)
-                {
-                    return (T)child;
+                    FiguresDataGrid.Items.Refresh();
+                    this.ShowToastNotification(new ToastNotification("Successful removal", "Successfully removed item(s)", NotificationType.Success));
                 }
                 else
                 {
-                    T childOfChild = FindVisualChild<T>(child);
-                    if (childOfChild != null)
-                    {
-                        return childOfChild;
-                    }
+                    return;
                 }
             }
-            return null;
+            else
+            {
+                return;
+            }
         }
     }
 }

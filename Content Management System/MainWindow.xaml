@@ -91,7 +91,8 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Click="LogInButton_Click"
-                    Style="{StaticResource ButtonStyle}">
+                    Style="{StaticResource ButtonStyle}"
+                    ToolTip="Attempt to Log into your account">
                     <StackPanel Orientation="Horizontal">
                         <fa5:SvgAwesome
                             Height="20"
@@ -118,7 +119,8 @@
                         Click="Exit_Click"
                         Content="Exit"
                         DockPanel.Dock="Right"
-                        Style="{StaticResource ButtonStyle}" />
+                        Style="{StaticResource ButtonStyle}"
+                        ToolTip="Exit the application" />
                 </DockPanel>
             </Grid>
             <notifications:NotificationArea

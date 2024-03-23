@@ -51,6 +51,7 @@
             <Setter Property="FontStyle" Value="Italic" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontWeight" Value="Medium" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Effect" Value="{StaticResource MouseOverDropShadowEffect}" />

@@ -51,6 +51,32 @@
                     </PathGeometry>
                 </Path.Data>
             </Path>
+            <DockPanel
+                Width="1280"
+                Margin="0"
+                LastChildFill="True">
+                <Image
+                    Height="300"
+                    Margin="0"
+                    DockPanel.Dock="Left"
+                    Opacity="0.7"
+                    Source="Images/TopLeftCorner.png" />
+                <Image
+                    Height="300"
+                    Margin="0"
+                    DockPanel.Dock="Right"
+                    Opacity="0.7"
+                    Source="Images/TopRightCorner.png" />
+                <Grid DockPanel.Dock="Top">
+                    <Image
+                        Height="40"
+                        Margin="15"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Opacity="0.8"
+                        Source="Images/CoatOfArms2.png" />
+                </Grid>
+            </DockPanel>
             <Grid Margin="130,70">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -65,59 +91,65 @@
                     Name="AddButton"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Width="240"
-                    Height="60"
+                    Width="260"
+                    Height="70"
                     Margin="0,30"
-                    Style="{StaticResource ButtonStyle}">
+                    BorderThickness="6"
+                    Style="{StaticResource ButtonStyle}"
+                    ToolTip="Add an item to the table">
                     <StackPanel Orientation="Horizontal">
                         <fa5:SvgAwesome
                             Height="30"
-                            Margin="0,0,7,0"
+                            Margin="0,0,8,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Foreground="White"
                             Icon="Solid_Plus" />
-                        <TextBlock FontSize="26">Add</TextBlock>
+                        <TextBlock FontSize="27">Add</TextBlock>
                     </StackPanel>
                 </Button>
                 <Button
                     Name="RemoveButton"
                     Grid.Row="0"
                     Grid.Column="1"
-                    Width="240"
-                    Height="60"
+                    Width="260"
+                    Height="70"
                     Margin="0,30"
+                    BorderThickness="6"
                     Click="RemoveButton_Click"
-                    Style="{StaticResource ButtonStyle}">
+                    Style="{StaticResource ButtonStyle}"
+                    ToolTip="Remove item(s) from the table">
                     <StackPanel Orientation="Horizontal">
                         <fa5:SvgAwesome
                             Height="30"
-                            Margin="0,0,7,0"
+                            Margin="0,0,8,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Foreground="White"
                             Icon="Solid_Trash" />
-                        <TextBlock FontSize="26">Remove</TextBlock>
+                        <TextBlock FontSize="27">Remove</TextBlock>
                     </StackPanel>
                 </Button>
                 <Button
                     Name="LogOutButton"
                     Grid.Row="0"
                     Grid.Column="2"
-                    Width="240"
-                    Height="60"
+                    Width="260"
+                    Height="70"
                     Margin="0,30"
+                    BorderThickness="6"
                     Click="LogOutButton_Click"
-                    Style="{StaticResource ButtonStyle}">
+                    Style="{StaticResource ButtonStyle}"
+                    ToolTip="Log out of your account">
                     <StackPanel Orientation="Horizontal">
                         <fa5:SvgAwesome
                             Height="30"
-                            Margin="0,2,7,0"
+                            Margin="0,2,8,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Foreground="White"
                             Icon="Solid_SignOutAlt" />
-                        <TextBlock FontSize="26">Log Out</TextBlock>
+                        <TextBlock FontSize="27">Log Out</TextBlock>
                     </StackPanel>
                 </Button>
                 <DataGrid
@@ -125,7 +157,7 @@
                     Grid.Row="1"
                     Grid.ColumnSpan="3"
                     Width="1020"
-                    Height="508"
+                    Height="498"
                     AutoGenerateColumns="False"
                     BorderBrush="#333333"
                     BorderThickness="2"
@@ -146,8 +178,8 @@
                             <Setter Property="Background" Value="Transparent" />
                             <Setter Property="Foreground" Value="White" />
                             <Setter Property="FontFamily" Value="Imprint MT Shadow" />
-                            <Setter Property="Height" Value="30" />
-                            <Setter Property="FontSize" Value="25" />
+                            <Setter Property="Height" Value="35" />
+                            <Setter Property="FontSize" Value="24" />
                         </Style>
                         <Style TargetType="ScrollBar">
                             <Setter Property="Background" Value="Transparent" />
@@ -169,9 +201,11 @@
                     </DataGrid.Resources>
                     <DataGrid.RowStyle>
                         <Style TargetType="DataGridRow">
+                            <Setter Property="BorderThickness" Value="0,1,0,0" />
+                            <Setter Property="BorderBrush" Value="#333333" />
                             <Setter Property="Background" Value="Transparent" />
                             <Setter Property="FontFamily" Value="Imprint MT Shadow" />
-                            <Setter Property="FontSize" Value="20" />
+                            <Setter Property="FontSize" Value="22" />
                             <Setter Property="Foreground" Value="White" />
                             <Setter Property="Focusable" Value="False" />
                             <Setter Property="TextBlock.TextAlignment" Value="Center" />
@@ -209,23 +243,13 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Width="2*" Header="Image">
+                        <DataGridTemplateColumn Width="2*" Header="Portrait">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Image
-                                        Width="90"
+                                        Width="110"
                                         Height="120"
                                         Source="{Binding Image}" />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Width="3*" Header="Description">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock
-                                        VerticalAlignment="Center"
-                                        Text="{Binding Description}"
-                                        TextAlignment="Center" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -242,6 +266,11 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
+            <notifications:NotificationArea
+                x:Name="TableWindowNotificationArea"
+                Panel.ZIndex="1000"
+                MaxItems="3"
+                Position="BottomRight" />
         </Canvas>
     </Border>
 </Window>

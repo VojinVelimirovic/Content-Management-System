@@ -148,5 +148,17 @@
     <Resource Include="Images\Stefan_Vladislav.jpg" />
     <Resource Include="Images\Stefan_Vladislav_II.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TopLeftCorner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TopRightCorner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TopRightCorner.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
