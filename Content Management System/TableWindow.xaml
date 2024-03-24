@@ -231,9 +231,13 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock
+                                        Name="NameTextBlock"
                                         VerticalAlignment="Center"
+                                        Cursor="Hand"
+                                        MouseLeftButtonDown="NameTextBlock_MouseLeftButtonDown"
                                         Text="{Binding Name}"
-                                        TextAlignment="Center" />
+                                        TextAlignment="Center"
+                                        TextDecorations="Underline" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

@@ -53,8 +53,7 @@ namespace Content_Management_System
                 try
                 {
                     string imagePath = openFileDialog.FileName;
-                    BitmapImage bitmap = new BitmapImage(new Uri(imagePath));
-                    ImagePreview.Source = bitmap;
+                    ImagePreview.Source = new BitmapImage(new Uri(imagePath));
                 }
                 catch (Exception ex)
                 {

@@ -313,7 +313,7 @@
                             VerticalAlignment="Center"
                             Foreground="White"
                             Icon="Solid_Plus" />
-                        <TextBlock FontSize="24">Add Figure</TextBlock>
+                        <TextBlock Name="AddFigureButtonContent" FontSize="24">Add Figure</TextBlock>
                     </StackPanel>
                 </Button>
             </Grid>

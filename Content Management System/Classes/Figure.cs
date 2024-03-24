@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.IO;
 
 namespace Content_Management_System.Classes
 {
@@ -24,15 +25,35 @@ namespace Content_Management_System.Classes
         private DateTime dateAdded;
         private bool isChecked;
 
-        public Figure(string name, int reignStart, int reignEnd, string image, string description)
+        public Figure(string name, int reignStart, int reignEnd, string image)
         {
             this.Name = name;
             this.ReignStart = reignStart;
             this.ReignEnd = reignEnd;
             this.Image = image;
-            this.Description = description;
+            this.Description = createRtfPath();
             this.DateAdded = DateTime.Now.Date;
             this.IsChecked = false;
+        }
+
+        private string createRtfPath()
+        {
+            string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rtfFiles");
+            Directory.CreateDirectory(folderPath);
+            string fileName = $"Figure_{RemoveInvalidPathChars(this.Name)}_{DateTime.Now:yyyyMMdd_HHmmss}.rtf";
+            string filePath = Path.Combine(folderPath, fileName);
+
+            return filePath;
+        }
+
+        private string RemoveInvalidPathChars(string path)
+        {
+            string invalidChars = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
+            foreach (char invalidChar in invalidChars)
+            {
+                path = path.Replace(invalidChar.ToString(), "");
+            }
+            return path;
         }
 
         public string Name { get => name; set => name = value; }
