@@ -28,3 +28,24 @@ C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bi
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\FontAwesome5.Net.dll
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\FontAwesome5.xml
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\FontAwesome5.Net.xml
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\AddFigureWindow.g.cs
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\AddFigureWindow.baml
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\nl-BE\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.csproj.AssemblyReference.cache

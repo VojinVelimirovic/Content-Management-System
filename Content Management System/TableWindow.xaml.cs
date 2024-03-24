@@ -97,7 +97,7 @@ namespace Content_Management_System
                         }
                     }
                     FiguresDataGrid.Items.Refresh();
-                    this.ShowToastNotification(new ToastNotification("Successful removal", "Successfully removed item(s)", NotificationType.Success));
+                    this.ShowToastNotification(new ToastNotification("Success", "Successfully removed item(s)", NotificationType.Success));
                 }
                 else
                 {
@@ -108,6 +108,36 @@ namespace Content_Management_System
             {
                 return;
             }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddFigureWindow addWindow = new AddFigureWindow();
+            this.Hide();
+            addWindow.Show();
+            addWindow.Closing += (senderClosing, args) =>
+            {
+                if (args.Cancel)
+                {
+                    return;
+                }
+                else
+                {
+                    this.Show();
+                    string name = addWindow.NameTextBox.Text;
+                    int reignStart, reignEnd;
+                    if (int.TryParse(addWindow.ReignStartTextBox.Text, out reignStart) &&
+                        int.TryParse(addWindow.ReignEndTextBox.Text, out reignEnd))
+                    {
+                        string portrait = addWindow.ImagePreview.Source.ToString();
+                        string description = new TextRange(addWindow.EditorRichTextBox.Document.ContentStart, addWindow.EditorRichTextBox.Document.ContentEnd).Text;
+                        Figure figure = new Figure(name, reignStart, reignEnd, portrait, description);
+                        figures.Add(figure);
+                        FiguresDataGrid.Items.Refresh();
+                        this.ShowToastNotification(new ToastNotification("Success", "Successfully added item(s)", NotificationType.Success));
+                    }
+                }
+            };
         }
     }
 }

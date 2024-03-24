@@ -70,7 +70,7 @@
                 <Grid DockPanel.Dock="Top">
                     <Image
                         Height="40"
-                        Margin="15"
+                        Margin="25"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
                         Opacity="0.8"
@@ -95,6 +95,7 @@
                     Height="70"
                     Margin="0,30"
                     BorderThickness="6"
+                    Click="AddButton_Click"
                     Style="{StaticResource ButtonStyle}"
                     ToolTip="Add an item to the table">
                     <StackPanel Orientation="Horizontal">
