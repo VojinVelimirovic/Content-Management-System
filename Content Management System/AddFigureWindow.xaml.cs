@@ -73,21 +73,22 @@ namespace Content_Management_System
         private void EditorRichTextBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
             object fontWeight = EditorRichTextBox.Selection.GetPropertyValue(Inline.FontWeightProperty);
-            BoldToggleButton.IsChecked = (fontWeight != null && fontWeight.Equals(FontWeights.Bold));
+            BoldToggleButton.IsChecked = (fontWeight != DependencyProperty.UnsetValue) && (fontWeight.Equals(FontWeights.Bold));
 
             object fontStyle = EditorRichTextBox.Selection.GetPropertyValue(Inline.FontStyleProperty);
-            ItalicToggleButton.IsChecked = (fontStyle != null && fontStyle.Equals(FontStyles.Italic));
+            ItalicToggleButton.IsChecked = (fontStyle != DependencyProperty.UnsetValue) && (fontStyle.Equals(FontStyles.Italic));
 
             object textDecorations = EditorRichTextBox.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
-            UnderlineToggleButton.IsChecked = (textDecorations != null && textDecorations.Equals(TextDecorations.Underline));
+            UnderlineToggleButton.IsChecked = (textDecorations != DependencyProperty.UnsetValue) &&
+                                               (textDecorations.Equals(TextDecorations.Underline));
 
             object fontFamily = EditorRichTextBox.Selection.GetPropertyValue(Inline.FontFamilyProperty);
             FontFamilyComboBox.SelectedItem = fontFamily;
 
             object fontSizeObj = EditorRichTextBox.Selection.GetPropertyValue(Inline.FontSizeProperty);
-            if (fontSizeObj != DependencyProperty.UnsetValue && double.TryParse(fontSizeObj.ToString(), out double fontSize))
+            if (fontSizeObj != null && fontSizeObj is double fontSize)
             {
-                FontSizeComboBox.SelectedItem = fontSize.ToString();
+                FontSizeComboBox.SelectedItem = fontSize;
             }
 
             var foreground = EditorRichTextBox.Selection.GetPropertyValue(Inline.ForegroundProperty);
@@ -164,7 +165,7 @@ namespace Content_Management_System
             if (new TextRange(EditorRichTextBox.Document.ContentStart, EditorRichTextBox.Document.ContentEnd).Text.Trim().Equals(string.Empty))
             {
                 isValid = false;
-                RichBoxErrorLabel.Content = "An option must be chosen!";
+                RichBoxErrorLabel.Content = "Field cannot be left empty!";
                 EditorRichTextBox.BorderBrush = Brushes.DarkRed;
             }
             else

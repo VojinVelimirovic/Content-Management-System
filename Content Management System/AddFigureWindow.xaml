@@ -204,10 +204,8 @@
                             IsOverflowOpen="False">
                             <ToggleButton
                                 Name="BoldToggleButton"
-                                Background="#FFD2B48C"
-                                BorderBrush="#333333"
-                                BorderThickness="1"
                                 Command="EditingCommands.ToggleBold"
+                                Style="{StaticResource toggleButtonStyle}"
                                 ToolTip="Bold">
                                 <fa5:SvgAwesome
                                     Height="15"
@@ -220,10 +218,8 @@
                             <Separator Background="#333333" />
                             <ToggleButton
                                 Name="ItalicToggleButton"
-                                Background="#FFD2B48C"
-                                BorderBrush="#333333"
-                                BorderThickness="1"
                                 Command="EditingCommands.ToggleItalic"
+                                Style="{StaticResource toggleButtonStyle}"
                                 ToolTip="Italic">
                                 <fa5:SvgAwesome
                                     Height="15"
@@ -236,11 +232,9 @@
                             <Separator Background="#333333" />
                             <ToggleButton
                                 Name="UnderlineToggleButton"
-                                Background="#FFD2B48C"
-                                BorderBrush="#333333"
-                                BorderThickness="1"
                                 Command="EditingCommands.ToggleUnderline"
-                                ToolTip="Italic">
+                                Style="{StaticResource toggleButtonStyle}"
+                                ToolTip="Underline">
                                 <fa5:SvgAwesome
                                     Height="15"
                                     Margin="0,1,0,0"

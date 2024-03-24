@@ -92,5 +92,22 @@
         <Style x:Key="DataGridShadowEffectStyle" TargetType="DataGrid">
             <Setter Property="Background" Value="{StaticResource ShadowEffectBrush2}" />
         </Style>
+
+        <Style x:Key="toggleButtonStyle" TargetType="ToggleButton">
+            <Setter Property="Background" Value="#FFD2B48C" />
+            <Setter Property="BorderBrush" Value="#333333" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="#C68AC6FF" />
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="Background" Value="#FFD2B48C" />
+                </Trigger>
+                <Trigger Property="IsChecked" Value="{x:Null}">
+                    <Setter Property="Background" Value="#FFD2B48C" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

@@ -53,7 +53,10 @@ namespace Content_Management_System
             if (user.UsersRole == User.UserRole.Visitor)
             {
                 AddButton.IsEnabled = false;
+                AddButton.Visibility = Visibility.Hidden;
                 RemoveButton.IsEnabled = false;
+                RemoveButton.Visibility = Visibility.Hidden;
+                CheckBoxColumn.Visibility = Visibility.Hidden;
             }
         }
 
@@ -113,8 +116,8 @@ namespace Content_Management_System
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             AddFigureWindow addWindow = new AddFigureWindow();
-            this.Hide();
             addWindow.Show();
+            this.Hide();
             addWindow.Closing += (senderClosing, args) =>
             {
                 if (args.Cancel)

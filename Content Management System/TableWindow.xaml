@@ -214,7 +214,10 @@
                         </Style>
                     </DataGrid.RowStyle>
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn Width="*" Header="">
+                        <DataGridTemplateColumn
+                            x:Name="CheckBoxColumn"
+                            Width="*"
+                            Header="">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <CheckBox
