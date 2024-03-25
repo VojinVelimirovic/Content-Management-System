@@ -48,4 +48,5 @@ C:\Users\Korisnik\Desktop\Content Management System\Content Management System\ob
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.csproj.CopyComplete
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.exe
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.pdb
-C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.csproj.AssemblyReference.cache
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\DisplayWindow.g.cs
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\DisplayWindow.baml

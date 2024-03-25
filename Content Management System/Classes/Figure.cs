@@ -25,14 +25,14 @@ namespace Content_Management_System.Classes
         private DateTime dateAdded;
         private bool isChecked;
 
-        public Figure(string name, int reignStart, int reignEnd, string image)
+        public Figure(string name, int reignStart, int reignEnd, string image, DateTime dateAdded)
         {
             this.Name = name;
             this.ReignStart = reignStart;
             this.ReignEnd = reignEnd;
             this.Image = image;
             this.Description = createRtfPath();
-            this.DateAdded = DateTime.Now.Date;
+            this.DateAdded = dateAdded;
             this.IsChecked = false;
         }
 
@@ -40,7 +40,7 @@ namespace Content_Management_System.Classes
         {
             string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rtfFiles");
             Directory.CreateDirectory(folderPath);
-            string fileName = $"Figure_{RemoveInvalidPathChars(this.Name)}_{DateTime.Now:yyyyMMdd_HHmmss}.rtf";
+            string fileName = $"Figure_{RemoveInvalidPathChars(this.Name)}_{this.DateAdded:yyyyMMdd_HHmmss}.rtf";
             string filePath = Path.Combine(folderPath, fileName);
 
             return filePath;

@@ -223,7 +223,9 @@
                                     <CheckBox
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
-                                        IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}" />
+                                        Cursor="Hand"
+                                        IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}"
+                                        ToolTip="Check to remove" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

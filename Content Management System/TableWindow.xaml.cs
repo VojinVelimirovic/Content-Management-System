@@ -35,23 +35,23 @@ namespace Content_Management_System
             DataContext = this;
             notificationManager = new NotificationManager();
             figures = new ObservableCollection<Figure>();
-            figures.Add(new Figure("Stefan Nemanja", 1168, 1196, "Images/Stefan_Nemanja.jpg"));
-            figures.Add(new Figure("Stefan Nemanjić", 1196, 1227, "Images/Stefan_Nemanjic.jpg"));
-            figures.Add(new Figure("Stefan Radoslav", 1227, 1234, "Images/Stefan_Radoslav.jpg"));
-            figures.Add(new Figure("Stefan Vladislav", 1234, 1243, "Images/Stefan_Vladislav.jpg"));
-            figures.Add(new Figure("Stefan Uroš I", 1243, 1276, "Images/Stefan_Uros_I.jpg"));
-            figures.Add(new Figure("Stefan Dragutin", 1276, 1282, "Images/Stefan_Dragutin.jpg"));
-            figures.Add(new Figure("Stefan Milutin", 1282, 1321, "Images/Stefan_Milutin.jpg"));
-            figures.Add(new Figure("Stefan Vladislav II", 1321, 1324, "Images/Stefan_Vladislav_II.jpg"));
-            figures.Add(new Figure("Stefan Uroš III", 1322, 1331, "Images/Stefan_Decanski.jpg"));
-            figures.Add(new Figure("Stefan Dušan", 1331, 1355, "Images/Stefan_Dusan.jpg"));
-            figures.Add(new Figure("Stefan Uroš V", 1355, 1371, "Images/Stefan_Uros_V.jpg"));
+            figures.Add(new Figure("Stefan Nemanja", 1168, 1196, "Images/Stefan_Nemanja.jpg", DateTime.Now));
+            figures.Add(new Figure("Stefan Nemanjić", 1196, 1227, "Images/Stefan_Nemanjic.jpg", DateTime.Now));
+            figures.Add(new Figure("Stefan Radoslav", 1227, 1234, "Images/Stefan_Radoslav.jpg", DateTime.Now));
+            figures.Add(new Figure("Stefan Vladislav", 1234, 1243, "Images/Stefan_Vladislav.jpg", DateTime.Now));
+            figures.Add(new Figure("Stefan Uroš I", 1243, 1276, "Images/Stefan_Uros_I.jpg", DateTime.Now));
+            figures.Add(new Figure("Stefan Dragutin", 1276, 1282, "Images/Stefan_Dragutin.jpg", DateTime.Now));
+            figures.Add(new Figure("Stefan Milutin", 1282, 1321, "Images/Stefan_Milutin.jpg", DateTime.Now));
+            figures.Add(new Figure("Stefan Vladislav II", 1321, 1324, "Images/Stefan_Vladislav_II.jpg", DateTime.Now));
+            figures.Add(new Figure("Stefan Uroš III", 1322, 1331, "Images/Stefan_Decanski.jpg", DateTime.Now));
+            figures.Add(new Figure("Stefan Dušan", 1331, 1355, "Images/Stefan_Dusan.jpg", DateTime.Now));
+            figures.Add(new Figure("Stefan Uroš V", 1355, 1371, "Images/Stefan_Uros_V.jpg", DateTime.Now));
             this.user = user;
             AdjustPage(user);
             this.mainWindow = mainWindow;
         }
 
-        private void AdjustPage(User user) 
+        private void AdjustPage(User user)
         {
             if (user.UsersRole == User.UserRole.Visitor)
             {
@@ -82,7 +82,7 @@ namespace Content_Management_System
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             bool anyChecked = false;
-            foreach(Figure figure in figures)
+            foreach (Figure figure in figures)
             {
                 if (figure.IsChecked)
                 {
@@ -140,7 +140,7 @@ namespace Content_Management_System
                         int.TryParse(addWindow.ReignEndTextBox.Text, out reignEnd))
                     {
                         string portrait = addWindow.ImagePreview.Source.ToString();
-                        Figure figure = new Figure(name, reignStart, reignEnd, portrait);
+                        Figure figure = new Figure(name, reignStart, reignEnd, portrait, DateTime.Now);
                         SaveRtfContent(figure, addWindow);
                         figures.Add(figure);
                         FiguresDataGrid.Items.Refresh();
@@ -164,19 +164,23 @@ namespace Content_Management_System
                 }
             }
         }
-        private void LoadRtfContent(string filePath, AddFigureWindow editWindow)
+        private void LoadRtfContent(string filePath, System.Windows.Controls.RichTextBox richTextBox)
         {
             string rtfContent = string.Empty;
 
             if (File.Exists(filePath))
             {
                 rtfContent = File.ReadAllText(filePath);
+                if (string.IsNullOrEmpty(rtfContent.Trim()))
+                {
+                    rtfContent = "-";
+                }
             }
             else
             {
                 rtfContent = "-";
             }
-            TextRange range = new TextRange(editWindow.EditorRichTextBox.Document.ContentStart, editWindow.EditorRichTextBox.Document.ContentEnd);
+            TextRange range = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
             using (MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(rtfContent)))
             {
                 range.Load(stream, DataFormats.Rtf);
@@ -198,7 +202,7 @@ namespace Content_Management_System
                         editWindow.ReignStartTextBox.Text = figure.ReignStart.ToString();
                         editWindow.ReignEndTextBox.Text = figure.ReignEnd.ToString();
                         editWindow.ImagePreview.Source = new BitmapImage(new Uri(figure.Image, UriKind.RelativeOrAbsolute));
-                        LoadRtfContent(figure.Description, editWindow);
+                        LoadRtfContent(figure.Description, editWindow.EditorRichTextBox);
                         editWindow.AddFigureButtonContent.Text = "Edit Figure";
                         editWindow.Show();
                         this.Hide();
@@ -225,9 +229,23 @@ namespace Content_Management_System
                                     int index = figures.IndexOf(figure);
                                     figures[index] = figure;
                                     FiguresDataGrid.Items.Refresh();
+                                    this.ShowToastNotification(new ToastNotification("Success", "Successfully edited item", NotificationType.Success));
                                 }
                             }
                         };
+                    }
+                    else
+                    {
+                        DisplayWindow displayWindow = new DisplayWindow(figure);
+                        LoadRtfContent(figure.Description, displayWindow.DisplayRichTextBox);
+                        displayWindow.Show();
+                        this.Hide();
+                        displayWindow.Closed += (senderClosed, args) =>
+                        {
+                            this.Show();
+                            displayWindow.Hide();
+                        };
+
                     }
                 }
             }

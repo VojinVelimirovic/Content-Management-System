@@ -92,10 +92,17 @@
       <DependentUpon>AddFigureWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Figure.cs" />
+    <Compile Include="DisplayWindow.xaml.cs">
+      <DependentUpon>DisplayWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TableWindow.xaml.cs">
       <DependentUpon>TableWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AddFigureWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplayWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
