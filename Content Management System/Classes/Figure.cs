@@ -8,6 +8,7 @@ using System.IO;
 
 namespace Content_Management_System.Classes
 {
+    [Serializable]
     public class Figure : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -25,6 +26,9 @@ namespace Content_Management_System.Classes
         private DateTime dateAdded;
         private bool isChecked;
 
+
+        public Figure() { }
+
         public Figure(string name, int reignStart, int reignEnd, string image, DateTime dateAdded)
         {
             this.Name = name;
@@ -40,10 +44,28 @@ namespace Content_Management_System.Classes
         {
             string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rtfFiles");
             Directory.CreateDirectory(folderPath);
-            string fileName = $"Figure_{RemoveInvalidPathChars(this.Name)}_{this.DateAdded:yyyyMMdd_HHmmss}.rtf";
+            string fileName = $"Figure_{RemoveInvalidPathChars(this.Name)}.rtf";
             string filePath = Path.Combine(folderPath, fileName);
-
-            return filePath;
+            if (!File.Exists(filePath))
+            {
+                return filePath; // If the file doesn't exist, return the base file path
+            }
+            else
+            {
+                string uniqueFilePath = filePath;
+                int count = 1;
+                while (File.Exists(uniqueFilePath))
+                {
+                    string randomSuffix = "_" + count;
+                    uniqueFilePath = Path.Combine(folderPath, $"{fileName}{randomSuffix}.rtf");
+                    count++;
+                    if (count > 1000)
+                    {
+                        throw new Exception("Unable to generate a unique file path.");
+                    }
+                }
+                return uniqueFilePath;
+            }
         }
 
         private string RemoveInvalidPathChars(string path)

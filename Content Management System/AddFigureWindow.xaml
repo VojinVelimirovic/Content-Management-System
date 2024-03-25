@@ -79,8 +79,8 @@
             </DockPanel>
             <Grid
                 Width="460"
-                Height="670"
-                Margin="10,70">
+                Height="660"
+                Margin="10,80,10,70">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
@@ -88,8 +88,8 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="1.25*" />
                     <RowDefinition Height="1.25*" />
-                    <RowDefinition Height="3*" />
-                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="3.1*" />
+                    <RowDefinition Height="1.65*" />
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" Margin="10,0,0,0">
                     <Grid.ColumnDefinitions>
@@ -101,17 +101,20 @@
                     </Grid.RowDefinitions>
                     <TextBlock
                         Grid.Column="0"
-                        HorizontalAlignment="Center"
+                        Margin="15,0"
+                        HorizontalAlignment="Right"
                         FontSize="30"
                         Style="{StaticResource TextBlockStyle}"
                         Text="Name:" />
                     <StackPanel
                         Grid.Row="0"
                         Grid.Column="2"
-                        HorizontalAlignment="Center"
+                        Margin="15,0"
+                        HorizontalAlignment="Left"
                         VerticalAlignment="Bottom">
                         <TextBox
                             Name="NameTextBox"
+                            Height="38"
                             Margin="0"
                             Style="{StaticResource TextBoxStyle}" />
                         <Label
@@ -134,6 +137,7 @@
                     </Grid.RowDefinitions>
                     <TextBlock
                         Grid.Column="0"
+                        Margin="0,0,2,0"
                         HorizontalAlignment="Center"
                         FontSize="24"
                         Style="{StaticResource TextBlockStyle}"
@@ -160,6 +164,7 @@
                     </StackPanel>
                     <TextBlock
                         Grid.Column="2"
+                        Margin="0,0,0,2"
                         HorizontalAlignment="Center"
                         FontSize="24"
                         Style="{StaticResource TextBlockStyle}"
@@ -211,7 +216,7 @@
                         <RowDefinition Height="4*" />
                     </Grid.RowDefinitions>
                     <TextBlock
-                        FontSize="24"
+                        FontSize="30"
                         Style="{StaticResource TextBlockStyle}"
                         Text="Description:" />
                     <StackPanel Grid.Row="1">
@@ -320,13 +325,16 @@
                     Grid.Row="4"
                     Width="300"
                     Height="50"
+                    Margin="0,30,0,0"
+                    VerticalAlignment="Top"
                     BorderThickness="5"
                     Click="Button_Click"
                     Style="{StaticResource ButtonStyle}"
                     ToolTip="Add a figure">
                     <StackPanel Orientation="Horizontal">
                         <fa5:SvgAwesome
-                            Height="26"
+                            Name="ButtonIcon"
+                            Height="25"
                             Margin="0,0,8,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"

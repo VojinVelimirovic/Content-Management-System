@@ -95,6 +95,7 @@
     <Compile Include="DisplayWindow.xaml.cs">
       <DependentUpon>DisplayWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DataIO.cs" />
     <Compile Include="TableWindow.xaml.cs">
       <DependentUpon>TableWindow.xaml</DependentUpon>
     </Compile>
@@ -195,6 +196,11 @@
   <ItemGroup>
     <Resource Include="Images\DefaultImage.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\CoatOfArms3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CoatOFArms4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

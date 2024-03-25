@@ -17,6 +17,7 @@ using System.Collections.ObjectModel;
 using Notification.Wpf;
 using Content_Management_System.Helpers;
 using System.IO;
+using FontAwesome5;
 
 namespace Content_Management_System
 {
@@ -27,25 +28,20 @@ namespace Content_Management_System
     {
         private MainWindow mainWindow;
         private NotificationManager notificationManager;
+        private DataIO serializer = new DataIO();
         public ObservableCollection<Figure> figures { get; set; }
         private User user;
+        private readonly string xmlPath = "figures.xml";
         public TableWindow(User user, MainWindow mainWindow)
         {
             InitializeComponent();
             DataContext = this;
             notificationManager = new NotificationManager();
-            figures = new ObservableCollection<Figure>();
-            figures.Add(new Figure("Stefan Nemanja", 1168, 1196, "Images/Stefan_Nemanja.jpg", DateTime.Now));
-            figures.Add(new Figure("Stefan Nemanjić", 1196, 1227, "Images/Stefan_Nemanjic.jpg", DateTime.Now));
-            figures.Add(new Figure("Stefan Radoslav", 1227, 1234, "Images/Stefan_Radoslav.jpg", DateTime.Now));
-            figures.Add(new Figure("Stefan Vladislav", 1234, 1243, "Images/Stefan_Vladislav.jpg", DateTime.Now));
-            figures.Add(new Figure("Stefan Uroš I", 1243, 1276, "Images/Stefan_Uros_I.jpg", DateTime.Now));
-            figures.Add(new Figure("Stefan Dragutin", 1276, 1282, "Images/Stefan_Dragutin.jpg", DateTime.Now));
-            figures.Add(new Figure("Stefan Milutin", 1282, 1321, "Images/Stefan_Milutin.jpg", DateTime.Now));
-            figures.Add(new Figure("Stefan Vladislav II", 1321, 1324, "Images/Stefan_Vladislav_II.jpg", DateTime.Now));
-            figures.Add(new Figure("Stefan Uroš III", 1322, 1331, "Images/Stefan_Decanski.jpg", DateTime.Now));
-            figures.Add(new Figure("Stefan Dušan", 1331, 1355, "Images/Stefan_Dusan.jpg", DateTime.Now));
-            figures.Add(new Figure("Stefan Uroš V", 1355, 1371, "Images/Stefan_Uros_V.jpg", DateTime.Now));
+            figures = serializer.DeSerializeObject<ObservableCollection<Figure>>(xmlPath);
+            if (figures == null)
+            {
+                figures = new ObservableCollection<Figure>();
+            }
             this.user = user;
             AdjustPage(user);
             this.mainWindow = mainWindow;
@@ -173,7 +169,7 @@ namespace Content_Management_System
                 rtfContent = File.ReadAllText(filePath);
                 if (string.IsNullOrEmpty(rtfContent.Trim()))
                 {
-                    rtfContent = "-";
+                    File.WriteAllText(filePath, "-");
                 }
             }
             else
@@ -204,6 +200,9 @@ namespace Content_Management_System
                         editWindow.ImagePreview.Source = new BitmapImage(new Uri(figure.Image, UriKind.RelativeOrAbsolute));
                         LoadRtfContent(figure.Description, editWindow.EditorRichTextBox);
                         editWindow.AddFigureButtonContent.Text = "Edit Figure";
+                        EFontAwesomeIcon icon;
+                        Enum.TryParse("Regular_Edit",out icon);
+                        editWindow.ButtonIcon.Icon = icon;
                         editWindow.Show();
                         this.Hide();
                         editWindow.Closing += (senderClosing, args) =>
@@ -243,12 +242,19 @@ namespace Content_Management_System
                         displayWindow.Closed += (senderClosed, args) =>
                         {
                             this.Show();
-                            displayWindow.Hide();
                         };
-
                     }
                 }
             }
+        }
+        private void SaveDataAsXML()
+        {
+            serializer.SerializeObject(figures, xmlPath);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SaveDataAsXML();
         }
     }
 }

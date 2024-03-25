@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<ArrayOfFigure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Figure>
+    <Name>Stefan Nemanja</Name>
+    <ReignStart>1168</ReignStart>
+    <ReignEnd>1196</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Nemanja.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Nemanja.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1067294+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+  <Figure>
+    <Name>Stefan Nemanjić</Name>
+    <ReignStart>1196</ReignStart>
+    <ReignEnd>1227</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Nemanjic.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Nemanjić.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1087489+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+  <Figure>
+    <Name>Stefan Radoslav</Name>
+    <ReignStart>1227</ReignStart>
+    <ReignEnd>1234</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Radoslav.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Radoslav.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1087489+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+  <Figure>
+    <Name>Stefan Vladislav</Name>
+    <ReignStart>1234</ReignStart>
+    <ReignEnd>1243</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Vladislav.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Vladislav.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1087489+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+  <Figure>
+    <Name>Stefan Uroš I</Name>
+    <ReignStart>1243</ReignStart>
+    <ReignEnd>1276</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Uros_I.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Uroš I.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1087489+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+  <Figure>
+    <Name>Stefan Dragutin</Name>
+    <ReignStart>1276</ReignStart>
+    <ReignEnd>1282</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Dragutin.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Dragutin.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1087489+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+  <Figure>
+    <Name>Stefan Milutin</Name>
+    <ReignStart>1282</ReignStart>
+    <ReignEnd>1321</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Milutin.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Milutin.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1087489+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+  <Figure>
+    <Name>Stefan Vladislav II</Name>
+    <ReignStart>1321</ReignStart>
+    <ReignEnd>1324</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Vladislav_II.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Vladislav II.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1087489+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+  <Figure>
+    <Name>Stefan Uroš III</Name>
+    <ReignStart>1322</ReignStart>
+    <ReignEnd>1331</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Decanski.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Uroš III.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1087489+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+  <Figure>
+    <Name>Stefan Dušan</Name>
+    <ReignStart>1331</ReignStart>
+    <ReignEnd>1355</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Dusan.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Dušan.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1087489+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+  <Figure>
+    <Name>Stefan Uroš V</Name>
+    <ReignStart>1355</ReignStart>
+    <ReignEnd>1371</ReignEnd>
+    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Uros_V.jpg</Image>
+    <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Uroš V.rtf</Description>
+    <DateAdded>2024-03-25T17:19:23.1087489+01:00</DateAdded>
+    <IsChecked>false</IsChecked>
+  </Figure>
+</ArrayOfFigure>

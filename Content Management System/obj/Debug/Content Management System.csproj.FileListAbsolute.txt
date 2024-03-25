@@ -50,3 +50,4 @@ C:\Users\Korisnik\Desktop\Content Management System\Content Management System\ob
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.pdb
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\DisplayWindow.g.cs
 C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\DisplayWindow.baml
+C:\Users\Korisnik\Desktop\Content Management System\Content Management System\obj\Debug\Content Management System.csproj.AssemblyReference.cache

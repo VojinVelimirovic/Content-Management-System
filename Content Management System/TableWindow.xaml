@@ -10,6 +10,7 @@
     Title="Table"
     AllowsTransparency="True"
     Background="Transparent"
+    Closing="Window_Closing"
     MouseLeftButtonDown="Window_MouseLeftButtonDown"
     SizeToContent="WidthAndHeight"
     WindowStartupLocation="CenterScreen"

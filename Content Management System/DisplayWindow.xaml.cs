@@ -32,5 +32,10 @@ namespace Content_Management_System
         {
             this.DragMove();
         }
+
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
