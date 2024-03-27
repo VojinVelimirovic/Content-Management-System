@@ -69,6 +69,31 @@ namespace Content_Management_System
             }
         }
 
+        private void FontSizeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (FontSizeComboBox.SelectedItem != null && !EditorRichTextBox.Selection.IsEmpty)
+            {
+                EditorRichTextBox.Selection.ApplyPropertyValue(Inline.FontSizeProperty, FontSizeComboBox.SelectedItem);
+            }
+        }
+
+        private void ColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            if (ColorPicker.SelectedColor != null && !EditorRichTextBox.Selection.IsEmpty)
+            {
+                Color selectedColor = ColorPicker.SelectedColor.Value;
+                SolidColorBrush brush = new SolidColorBrush(selectedColor);
+                EditorRichTextBox.Selection.ApplyPropertyValue(Inline.ForegroundProperty, brush);
+            }
+        }
+
+        private void EditorRichTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = new TextRange(EditorRichTextBox.Document.ContentStart, EditorRichTextBox.Document.ContentEnd).Text;
+            string[] words = text.Split(new char[] { ' ', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            WordCountTextBox.Text = $"{words.Length} words";
+        }
+
         private void EditorRichTextBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
             object fontWeight = EditorRichTextBox.Selection.GetPropertyValue(Inline.FontWeightProperty);
@@ -98,14 +123,6 @@ namespace Content_Management_System
             else if (foreground is Color color)
             {
                 ColorPicker.SelectedColor = color;
-            }
-        }
-
-        private void FontSizeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (FontSizeComboBox.SelectedItem != null && !EditorRichTextBox.Selection.IsEmpty)
-            {
-                EditorRichTextBox.Selection.ApplyPropertyValue(Inline.FontSizeProperty, FontSizeComboBox.SelectedItem);
             }
         }
 
@@ -185,23 +202,6 @@ namespace Content_Management_System
             else
             {
                 return;
-            }
-        }
-
-        private void EditorRichTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string text = new TextRange(EditorRichTextBox.Document.ContentStart, EditorRichTextBox.Document.ContentEnd).Text;
-            string[] words = text.Split(new char[] { ' ', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-            WordCountTextBox.Text = $"{words.Length} words";
-        }
-
-        private void ColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
-        {
-            if (ColorPicker.SelectedColor != null && !EditorRichTextBox.Selection.IsEmpty)
-            {
-                Color selectedColor = ColorPicker.SelectedColor.Value;
-                SolidColorBrush brush = new SolidColorBrush(selectedColor);
-                EditorRichTextBox.Selection.ApplyPropertyValue(Inline.ForegroundProperty, brush);
             }
         }
     }

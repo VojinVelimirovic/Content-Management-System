@@ -182,9 +182,6 @@
     <Resource Include="Images\TopLeftCorner.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TopRightCorner.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Shield.png" />
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Notification.Wpf;
-using Content_Management_System.Helpers;
 using Content_Management_System.Classes;
 
 namespace Content_Management_System
@@ -23,7 +22,6 @@ namespace Content_Management_System
     /// </summary>
     public partial class MainWindow : Window
     {
-        private NotificationManager notificationManager;
         enum UserRole { Visitor, Admin };
         readonly string AdminUsername = "admin";
         readonly string AdminPassword = "admin";
@@ -33,11 +31,6 @@ namespace Content_Management_System
         public MainWindow()
         {
             InitializeComponent();
-            notificationManager = new NotificationManager();
-        }
-        public void ShowToastNotification(ToastNotification toastNotification)
-        {
-            notificationManager.Show(toastNotification.Title, toastNotification.Message, toastNotification.Type, "WindowNotificationArea");
         }
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
@@ -52,8 +45,12 @@ namespace Content_Management_System
                 TableWindow tableWindow = new TableWindow(user, this);
                 tableWindow.Show();
                 this.Hide();
+                UsernameTextBox.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
                 UsernameTextBox.Text = String.Empty;
+                UsernameErrorTextBlock.Text = "";
+                PasswordTextBox.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
                 PasswordTextBox.Password = String.Empty;
+                PasswordErrorTextBlock.Text = "";
             }
             else if (UsernameTextBox.Text.Equals(VisitorUsermane) && PasswordTextBox.Password.Equals(VisitorPassword))
             {
@@ -61,13 +58,33 @@ namespace Content_Management_System
                 TableWindow tableWindow = new TableWindow(user, this);
                 tableWindow.Show();
                 this.Hide();
+                UsernameTextBox.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
                 UsernameTextBox.Text = String.Empty;
+                UsernameErrorTextBlock.Text = "";
+                PasswordTextBox.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
                 PasswordTextBox.Password = String.Empty;
+                PasswordErrorTextBlock.Text = "";
             }
             else
             {
-                MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-                mainWindow.ShowToastNotification(new ToastNotification("Login Error", "Invalid username/password.", NotificationType.Error));
+                UsernameTextBox.BorderBrush = Brushes.DarkRed;
+                PasswordTextBox.BorderBrush = Brushes.DarkRed;
+                if (UsernameTextBox.Text.Equals(string.Empty))
+                {
+                    UsernameErrorTextBlock.Text = "Field cannot be left empty!";
+                }
+                else
+                {
+                    UsernameErrorTextBlock.Text = "Invalid username/password!";
+                }
+                if (PasswordTextBox.Password.Equals(string.Empty))
+                {
+                    PasswordErrorTextBlock.Text = "Field cannot be left empty!";
+                }
+                else
+                {
+                    PasswordErrorTextBlock.Text = "Invalid username/password!";
+                }
                 return;
             }
         }

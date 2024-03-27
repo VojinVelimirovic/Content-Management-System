@@ -129,7 +129,7 @@
                                 Background="#FFD2B48C"
                                 FontFamily="Imprint MT Shadow"
                                 FontSize="13"
-                                Text="Coat of arms, House of Nemanjic"
+                                Text="Coat of arms, House of Nemanjić"
                                 TextAlignment="Center"
                                 TextWrapping="Wrap" />
                         </StackPanel>

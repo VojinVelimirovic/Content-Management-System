@@ -45,6 +45,7 @@ namespace Content_Management_System
             this.user = user;
             AdjustPage(user);
             this.mainWindow = mainWindow;
+            ContentRendered += (sender, e) => ShowToastNotification(new ToastNotification("Success", "Successful login", NotificationType.Success));
         }
 
         private void AdjustPage(User user)
@@ -95,7 +96,7 @@ namespace Content_Management_System
 
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
-                    for (int i = figures.Count - 1; i >= 0; i--)
+                    for (int i = figures.Count-1; i >= 0; i--)
                     {
                         if (figures[i].IsChecked)
                         {
@@ -116,35 +117,6 @@ namespace Content_Management_System
             }
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddFigureWindow addWindow = new AddFigureWindow();
-            addWindow.Show();
-            this.Hide();
-            addWindow.Closing += (senderClosing, args) =>
-            {
-                if (args.Cancel)
-                {
-                    return;
-                }
-                else
-                {
-                    this.Show();
-                    string name = addWindow.NameTextBox.Text;
-                    int reignStart, reignEnd;
-                    if (int.TryParse(addWindow.ReignStartTextBox.Text, out reignStart) &&
-                        int.TryParse(addWindow.ReignEndTextBox.Text, out reignEnd))
-                    {
-                        string portrait = addWindow.ImagePreview.Source.ToString();
-                        Figure figure = new Figure(name, reignStart, reignEnd, portrait, DateTime.Now);
-                        SaveRtfContent(figure, addWindow);
-                        figures.Add(figure);
-                        FiguresDataGrid.Items.Refresh();
-                        this.ShowToastNotification(new ToastNotification("Success", "Successfully added item(s)", NotificationType.Success));
-                    }
-                }
-            };
-        }
         private void SaveRtfContent(Figure figure, AddFigureWindow addWindow)
         {
             if (string.IsNullOrEmpty(figure.Description))
@@ -180,6 +152,49 @@ namespace Content_Management_System
             using (MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(rtfContent)))
             {
                 range.Load(stream, DataFormats.Rtf);
+            }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddFigureWindow addWindow = new AddFigureWindow();
+            addWindow.Show();
+            this.Hide();
+            addWindow.Closing += (senderClosing, args) =>
+            {
+                if (args.Cancel)
+                {
+                    return;
+                }
+                else
+                {
+                    this.Show();
+                    string name = addWindow.NameTextBox.Text;
+                    int reignStart, reignEnd;
+                    if (int.TryParse(addWindow.ReignStartTextBox.Text, out reignStart) &&
+                        int.TryParse(addWindow.ReignEndTextBox.Text, out reignEnd))
+                    {
+                        string portrait = addWindow.ImagePreview.Source.ToString();
+                        Figure figure = new Figure(name, reignStart, reignEnd, portrait, DateTime.Now);
+                        SaveRtfContent(figure, addWindow);
+                        figures.Add(figure);
+                        FiguresDataGrid.Items.Refresh();
+                        this.ShowToastNotification(new ToastNotification("Success", "Successfully added item(s)", NotificationType.Success));
+                    }
+                }
+            };
+        }
+
+        private void NameTextBlock_Loaded(object sender, RoutedEventArgs e)
+        {
+            TextBlock textBlock = sender as TextBlock;
+            if (user.UsersRole == User.UserRole.Admin)
+            {
+                textBlock.ToolTip = "Edit figure";
+            }
+            else
+            {
+                textBlock.ToolTip = "About page";
             }
         }
 
@@ -247,6 +262,7 @@ namespace Content_Management_System
                 }
             }
         }
+
         private void SaveDataAsXML()
         {
             serializer.SerializeObject(figures, xmlPath);

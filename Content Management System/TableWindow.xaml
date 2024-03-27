@@ -237,6 +237,7 @@
                                         Name="NameTextBlock"
                                         VerticalAlignment="Center"
                                         Cursor="Hand"
+                                        Loaded="NameTextBlock_Loaded"
                                         MouseLeftButtonDown="NameTextBlock_MouseLeftButtonDown"
                                         Text="{Binding Name}"
                                         TextAlignment="Center"

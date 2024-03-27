@@ -48,7 +48,7 @@ namespace Content_Management_System.Classes
             string filePath = Path.Combine(folderPath, fileName);
             if (!File.Exists(filePath))
             {
-                return filePath; // If the file doesn't exist, return the base file path
+                return filePath;
             }
             else
             {
@@ -56,6 +56,7 @@ namespace Content_Management_System.Classes
                 int count = 1;
                 while (File.Exists(uniqueFilePath))
                 {
+                    fileName = Path.GetFileNameWithoutExtension(fileName);
                     string randomSuffix = "_" + count;
                     uniqueFilePath = Path.Combine(folderPath, $"{fileName}{randomSuffix}.rtf");
                     count++;
