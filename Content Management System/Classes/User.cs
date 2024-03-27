@@ -17,6 +17,7 @@ namespace Content_Management_System.Classes
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
 
+        public User() {}
         public User(UserRole usersRole, string username, string password)
         {
             this.UsersRole = usersRole;
