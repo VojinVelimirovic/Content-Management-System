@@ -4,7 +4,7 @@
     <Name>Stefan Nemanja</Name>
     <ReignStart>1168</ReignStart>
     <ReignEnd>1196</ReignEnd>
-    <Image>pack://application:,,,/Content Management System;component/Images/Stefan_Nemanja.jpg</Image>
+    <Image>file:///C:/Users/Korisnik/Desktop/Content Management System/Content Management System/Images/Stefan_Nemanja.jpg</Image>
     <Description>C:\Users\Korisnik\Desktop\Content Management System\Content Management System\bin\Debug\rtfFiles\Figure_Stefan Nemanja.rtf</Description>
     <DateAdded>2024-03-25T17:19:23.1067294+01:00</DateAdded>
     <IsChecked>false</IsChecked>

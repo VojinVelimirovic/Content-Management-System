@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Content_Management_System.Classes
 {
+    [Serializable]
     public class User
     {
         public enum UserRole { Visitor, Admin };

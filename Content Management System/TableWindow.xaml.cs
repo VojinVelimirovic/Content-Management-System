@@ -139,10 +139,6 @@ namespace Content_Management_System
             if (File.Exists(filePath))
             {
                 rtfContent = File.ReadAllText(filePath);
-                if (string.IsNullOrEmpty(rtfContent.Trim()))
-                {
-                    File.WriteAllText(filePath, "-");
-                }
             }
             else
             {

@@ -84,6 +84,8 @@ namespace Content_Management_System
                 Color selectedColor = ColorPicker.SelectedColor.Value;
                 SolidColorBrush brush = new SolidColorBrush(selectedColor);
                 EditorRichTextBox.Selection.ApplyPropertyValue(Inline.ForegroundProperty, brush);
+                ColorTextBlock.Text = brush.Color.ToString();
+                ColorTextBlock.Foreground = brush;
             }
         }
 
@@ -119,10 +121,14 @@ namespace Content_Management_System
             if (foreground is SolidColorBrush solidColorBrush)
             {
                 ColorPicker.SelectedColor = solidColorBrush.Color;
+                ColorTextBlock.Text = solidColorBrush.Color.ToString();
+                ColorTextBlock.Foreground = solidColorBrush;
             }
             else if (foreground is Color color)
             {
                 ColorPicker.SelectedColor = color;
+                ColorTextBlock.Text = color.ToString();
+                ColorTextBlock.Foreground = new SolidColorBrush(color);
             }
         }
 

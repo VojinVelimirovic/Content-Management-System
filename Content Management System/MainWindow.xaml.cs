@@ -24,7 +24,6 @@ namespace Content_Management_System
     /// </summary>
     public partial class MainWindow : Window
     {
-        enum UserRole { Visitor, Admin };
         public ObservableCollection<User> users { get; set; }
         readonly string usersXmlFilePath = "users.xml";
         private DataIO serializer = new DataIO();
@@ -62,11 +61,10 @@ namespace Content_Management_System
                 this.Hide();
                 UsernameTextBox.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
                 UsernameTextBox.Text = String.Empty;
-                UsernameErrorTextBlock.Text = "";
+                UsernameErrorTextBlock.Text = String.Empty;
                 PasswordTextBox.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
                 PasswordTextBox.Password = String.Empty;
-                PasswordErrorTextBlock.Text = "";
-                PasswordErrorTextBlock.Text = "";
+                PasswordErrorTextBlock.Text = String.Empty;
             }
             else
             {

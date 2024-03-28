@@ -104,3 +104,56 @@ C:\Users\Korisnik\Desktop\CMS\Content Management System\obj\Debug\Content Manage
 C:\Users\Korisnik\Desktop\CMS\Content Management System\obj\Debug\Content Management System.csproj.CopyComplete
 C:\Users\Korisnik\Desktop\CMS\Content Management System\obj\Debug\Content Management System.exe
 C:\Users\Korisnik\Desktop\CMS\Content Management System\obj\Debug\Content Management System.pdb
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Content Management System.exe.config
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Content Management System.exe
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Content Management System.pdb
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\FontAwesome5.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\FontAwesome5.Net.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Notification.Wpf.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\System.ValueTuple.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\FontAwesome5.xml
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\FontAwesome5.Net.xml
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Notification.Wpf.pdb
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\Notification.Wpf.xml
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\System.ValueTuple.xml
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\nl-BE\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\Content Management System.csproj.AssemblyReference.cache
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\AddFigureWindow.g.cs
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\DisplayWindow.g.cs
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\MainWindow.g.cs
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\TableWindow.g.cs
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\App.g.cs
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\Content Management System_MarkupCompile.cache
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\Content Management System_MarkupCompile.lref
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\App.baml
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\AddFigureWindow.baml
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\DisplayWindow.baml
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\MainWindow.baml
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\TableWindow.baml
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\Content Management System.g.resources
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\Content_Management_System.Properties.Resources.resources
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\Content Management System.csproj.GenerateResource.cache
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\Content Management System.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\Content Management System.csproj.CopyComplete
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\Content Management System.exe
+C:\Users\Korisnik\Desktop\Content Managment System\Content Management System\obj\Debug\Content Management System.pdb

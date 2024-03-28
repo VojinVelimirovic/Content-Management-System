@@ -261,7 +261,7 @@
                                 ToolTip="Underline">
                                 <fa5:SvgAwesome
                                     Height="15"
-                                    Margin="0,1,0,0"
+                                    Margin="0,0,0,1"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     Foreground="#333333"
@@ -288,11 +288,25 @@
                                 IsTextSearchEnabled="True"
                                 SelectionChanged="FontSizeCombobox_SelectionChanged" />
                             <Separator Background="#333333" />
+                            <Border
+                                Height="20"
+                                BorderBrush="#333333"
+                                BorderThickness="2">
+                                <TextBlock
+                                    Name="ColorTextBlock"
+                                    Width="60"
+                                    Height="20"
+                                    Background="#FFD2B48C"
+                                    TextAlignment="Center"
+                                    TextWrapping="Wrap" />
+                            </Border>
                             <xctk:ColorPicker
                                 Name="ColorPicker"
+                                Width="50"
                                 Height="20"
                                 BorderBrush="#333333"
                                 SelectedColorChanged="ColorPicker_SelectedColorChanged" />
+
                         </ToolBar>
                         <RichTextBox
                             Name="EditorRichTextBox"

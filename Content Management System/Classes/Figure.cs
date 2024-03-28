@@ -57,8 +57,8 @@ namespace Content_Management_System.Classes
                 while (File.Exists(uniqueFilePath))
                 {
                     fileName = Path.GetFileNameWithoutExtension(fileName);
-                    string randomSuffix = "_" + count;
-                    uniqueFilePath = Path.Combine(folderPath, $"{fileName}{randomSuffix}.rtf");
+                    string suffix = "_" + count;
+                    uniqueFilePath = Path.Combine(folderPath, $"{fileName}{suffix}.rtf");
                     count++;
                     if (count > 1000)
                     {
